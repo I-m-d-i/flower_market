@@ -63,7 +63,7 @@ export default {
 .header {
   position: relative;
   z-index: 2;
-  margin: 21px 25px 0;
+  margin: 12px 25px 30px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;

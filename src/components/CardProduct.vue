@@ -54,8 +54,9 @@ export default {
 .div {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 5px;
   min-width: 310px;
+  max-width: 460px;
 }
 
 button{
@@ -126,6 +127,7 @@ button{
   font-family: Crimson Text;
   font-size: 24px;
   line-height: normal;
+  text-align: center;
   font-variant: small-caps;
 }
 

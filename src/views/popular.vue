@@ -36,6 +36,7 @@ export default {
   justify-content: space-around;
   margin-inline: 20px;
   gap: 5%;
+  justify-items: center
 }
 @media (max-width: 680px) {
   .popular {

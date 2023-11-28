@@ -28,7 +28,7 @@ export default {
           <div  class="catalog-text" @click="scrollToCatalog()">в каталог</div>
         </div>
       </div>
-      <img style="width: 45vw;z-index: -1;margin-top: -185px" alt="flowers-home"
+      <img style="width: 45vw;z-index: -1;margin-top: -137px" alt="flowers-home"
            :src="require('@/assets/flowers-home.png')"/>
     </div>
 
@@ -179,7 +179,7 @@ h1:first-letter {
 
 .guarantee {
   margin-left: 110px;
-  margin-top: 100px;
+  margin-top: 24px;
 }
 
 .guarantee .guarantee-h {
@@ -215,7 +215,7 @@ input {
 .subscribe-form {
   background-color: #81637d;
   display: flex;
-  margin-top: 40px;
+  margin-top: 60px;
   flex-direction: column;
   align-self: center;
   width: 100%;

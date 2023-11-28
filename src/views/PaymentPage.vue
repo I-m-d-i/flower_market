@@ -74,7 +74,7 @@ export default {
         <p style="font-size: 24px">ДОСТАВКА</p>
       </div>
       <div class="total-cost-container">
-        <p class="totalCost" >{{totalCost}}</p>
+        <p class="totalCost" >{{totalCost}} ₽</p>
         <p style="color: #407D4D;font-size: 24px">БЕСПЛАТНО</p>
       </div>
     </div>
@@ -133,6 +133,7 @@ span, p, button {
   background: #DDB9B9;
   height: 59px;
   align-items: center;
+  cursor: pointer;
   padding-inline: 20px;
 }
 

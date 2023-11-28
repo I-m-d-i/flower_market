@@ -11,8 +11,18 @@ export default {
 <template>
 <footer>
   <div id="footer" class="footer-container" >
-    <div class="footer-logo">
-      <img class="logo" alt="logo" width="175" height="163" style="">
+    <div class="footer-logo" style=" position: relative;
+       margin-right: 30px;
+   overflow:hidden;
+    width: 200px;
+        height: 150px;">
+      <img class="logo" alt="logo" :src="require('@/assets/logo.png')" style="  position: absolute;
+   top:50%;
+   left:50%;
+   transform:translate(-50%,-50%);
+    width: 200px;
+    height: 250px;
+   object-fit:cover;">
     </div>
     <div class="footer-menu">
       <ul>

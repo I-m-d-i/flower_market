@@ -42,7 +42,6 @@ export default {
       <div style="padding-block: 10px;display: flex;
   flex-flow: row nowrap;    gap: 10px;">
         <img style="" alt="find" width="46" height="46" :src="require('@/assets/find.png')">
-        <img style="" alt="favorite" width="46" height="46" :src="require('@/assets/favorite.png')">
        <a href="/#/basket">
         <template v-if="countBasket===0">
           <img style="" alt="basket" width="46" height="46" :src="require('@/assets/basket.png')">

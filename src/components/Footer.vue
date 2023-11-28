@@ -1,0 +1,75 @@
+<script>
+export default {
+  name: "Footer"
+}
+</script>
+<template>
+<footer>
+  <div class="footer-container" >
+    <div class="footer-logo">
+      <img class="logo" alt="logo" width="175" height="163" style="">
+    </div>
+    <div class="footer-menu">
+      <ul>
+        <li><a>Популярное</a></li>
+        <li><a>Каталог</a></li>
+        <li><a>О нас</a></li>
+        <li><a>Отзывы</a></li>
+        <li><a>Контакты</a></li>
+      </ul>
+  </div>
+    <div class="footer-contact">
+      <ul>
+        <li>Адрес: город Красноярск, ул.Свердловская 15б.</li>
+        <li>часы работы:с 9:00 - 21:00</li>
+        <li>Телефон: 89082192323</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+</template>
+
+<style scoped>
+footer {
+  padding-bottom: 200px;
+}
+li {
+  list-style-type: none;
+}
+.footer-container{
+  background-color: #81637D;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding-block: 80px;
+  gap: 20px;
+}
+.footer-menu li {
+  mix-blend-mode: soft-light;
+  margin-bottom: 30px;
+  color: #FFF;
+  font-family: Anonymous Pro;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-inline: 10px;
+}
+.footer-contact li {
+  margin-bottom: 1em;
+  color: #FFF;
+  font-family: Anonymous Pro;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-inline: 10px;
+}
+.footer-logo {
+  align-self: flex-start;
+  width:175px;
+  height:163px;
+  background-color: #620255
+}
+</style>

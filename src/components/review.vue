@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-<div class="review_card">
+<div  class="review_card">
   <div class="review_container">
     <div class="review_img">
       <img :src="image_src" alt=""/>

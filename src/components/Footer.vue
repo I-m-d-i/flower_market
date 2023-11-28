@@ -1,27 +1,32 @@
 <script>
 export default {
-  name: "Footer"
+  name: "Footer",
+  methods: {
+    scrollTo(id) {
+      this.$router.push({name: "home", hash: `#${id}`})
+    }
+  }
 }
 </script>
 <template>
 <footer>
-  <div class="footer-container" >
+  <div id="footer" class="footer-container" >
     <div class="footer-logo">
       <img class="logo" alt="logo" width="175" height="163" style="">
     </div>
     <div class="footer-menu">
       <ul>
-        <li><a>Популярное</a></li>
-        <li><a>Каталог</a></li>
-        <li><a>О нас</a></li>
-        <li><a>Отзывы</a></li>
-        <li><a>Контакты</a></li>
+        <li><a @click="scrollTo('popular')">Популярное</a></li>
+        <li><a @click="scrollTo('catalog')">Каталог</a></li>
+        <li><a @click="scrollTo('about')">О нас</a></li>
+        <li><a @click="scrollTo('reviews')">Отзывы</a></li>
+        <li><a @click="scrollTo('footer')">Контакты</a></li>
       </ul>
   </div>
     <div class="footer-contact">
       <ul>
         <li>Адрес: город Красноярск, ул.Свердловская 15б.</li>
-        <li>часы работы:с 9:00 - 21:00</li>
+        <li>часы работы: с 9:00 - 21:00</li>
         <li>Телефон: 89082192323</li>
       </ul>
     </div>

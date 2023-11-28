@@ -182,6 +182,12 @@ export default createStore({
     },
     countBasket: (state) => {
       return state.basket.length
+    },
+    totalCost: (state) => {
+        return state.basket.reduce((acc, productId) => {
+            const product = state.products.find(product => product.id == productId)
+            return acc + product.price;
+        }, 0)
     }
   },
   mutations: {

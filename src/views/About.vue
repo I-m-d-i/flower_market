@@ -5,8 +5,9 @@ export default {
 </script>
 
 <template>
-  <h1 style="margin-left: 306px">О нас</h1>
-  <div style="
+  <div id="about">
+    <h1 style="margin-left: 306px">О нас</h1>
+    <div style="
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -26,9 +27,9 @@ gap:30px">
       ЭМОЦИЙ И ВПЕЧАТЛЕНИЙ, ГОРЯЩИЕ ГЛАЗА - ВСЕ ТО,<br/>
       ЧТО ДЕЛАЕТ НАС СОВЕРШЕННЕЕ ДЕНЬ ОТО ДНЯ.<br/>
     </span>
-    <img :src="require('@/assets/About1.png')" alt="О нас"/>
-  </div>
-  <div style="
+      <img :src="require('@/assets/About1.png')" alt="О нас"/>
+    </div>
+    <div style="
   display: flex;
    flex-direction: row;
     justify-content: space-between;
@@ -36,9 +37,9 @@ gap:30px">
     padding: 20px;
     margin-top: 30px;
 gap:30px"
-  >
-    <img :src="require('@/assets/About2.png')" alt="О нас"/>
-    <span>
+    >
+      <img :src="require('@/assets/About2.png')" alt="О нас"/>
+      <span>
       У НАС ВСЕГДА ПРЕДСТАВЛЕН<br/>
       ШИРОКИЙАССОРТИМЕНТ ОТЛИЧНЫХ ЦВЕТОВ.<br/>
       НАШ КАТАЛОГ НАСЧИТЫВАЕТ МНОГО<br/>
@@ -53,11 +54,12 @@ gap:30px"
       ТОВАРЫ: МЯГКИЕ ИГРУШКИ, ШАРЫ С ГЕЛИЕМ,<br/>
       ШОКОЛАД.<br/>
     </span>
+    </div>
   </div>
 </template>
 
 <style scoped>
-h1{
+h1 {
   color: #000;
   font-family: Source Serif Pro;
   font-size: 48px;
@@ -66,6 +68,7 @@ h1{
   line-height: normal;
   font-variant: small-caps;
 }
+
 span {
   color: #000;
   font-family: Source Serif Pro;

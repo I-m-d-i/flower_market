@@ -6,19 +6,37 @@ export default {
       return this.$store.getters.countBasket;
     },
   },
+  methods: {
+    scrollTo(id) {
+        this.$router.push({name: "home", hash: `#${id}`})
+    }
+  }
 }
 </script>
 
 <template>
 <!--Логотип выравненный по левую сторону-->
     <nav class="header">
-      <img class="logo" alt="logo" width="175" height="163" style="background-color: #81637D">
+      <div style=" position: relative;
+       margin-right: 30px;
+   overflow:hidden;
+    width: 200px;
+        height: 95px;">
+        <img class="logo" alt="logo" :src="require('@/assets/logo.png')" style="  position: absolute;
+   top:50%;
+   left:50%;
+   transform:translate(-50%,-50%);
+    width: 200px;
+    height: 250px;
+   object-fit:cover;">
+      </div>
+
       <div class="menu">
         <ul class="nav" >
-          <li><a>Популярное</a></li>
-          <li><a>Каталог</a></li>
-          <li><a>О нас</a></li>
-          <li><a>Контакты</a></li>
+          <li><a @click="scrollTo('popular')">Популярное</a></li>
+          <li><a @click="scrollTo('catalog')">Каталог</a></li>
+          <li><a @click="scrollTo('about')">О нас</a></li>
+          <li><a @click="scrollTo('footer')">Контакты</a></li>
         </ul>
       </div>
       <div style="padding-block: 10px;display: flex;
@@ -44,7 +62,7 @@ export default {
 .header {
   position: relative;
   z-index: 2;
-  margin: 21px 40px 0;
+  margin: 21px 25px 0;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -69,7 +87,5 @@ export default {
 .menu  li {
   padding-right: 40px ;
 }
-.logo {
-  margin-right: 30px;
-}
+
 </style>

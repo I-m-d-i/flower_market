@@ -36,9 +36,9 @@ export default {
 </script>
 
 <template>
-  <div style="margin-top: 100px">
+  <div id="reviews" style="margin-top: 100px">
     <h1>Отзывы</h1>
-    <div style="display: flex;justify-content: space-evenly;margin-bottom: 200px;">
+    <div style="display: flex; flex-wrap: wrap  ;justify-content: space-evenly;margin-bottom: 200px;">
       <review v-for="(review,i) in reviews" :key="i" :id="review.id" :rating="review.rating" :text="review.text" :author="review.author" :image_src="review.image_src"></review>
     </div>
   </div>

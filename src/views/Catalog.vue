@@ -28,7 +28,7 @@ export default {
 </script>
 
 <template>
-  <div style="text-align: left; margin-left: 20%;    margin-block: 100px;">
+  <div id="catalog" style="text-align: left; margin-left: 20%;    margin-block: 100px;">
     <h1>Каталог</h1>
   </div>
   <div class="catalog-container">

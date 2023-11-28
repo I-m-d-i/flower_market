@@ -7,6 +7,14 @@ export default {
       isOnline2: false,
       rating: 4.95,
     }
+  },
+  computed: {
+    countProduct() {
+      return this.$store.getters.countBasket
+    },
+    totalCost() {
+      return this.$store.getters.totalCost
+    }
   }
 }
 </script>
@@ -33,7 +41,7 @@ export default {
           <span>11-13 декабря</span>
         </div>
         <div class="count-product">
-          <span>1 товар</span>
+          <span>{{countProduct}} товар</span>
         </div>
       </div>
     </div>
@@ -66,7 +74,7 @@ export default {
         <p style="font-size: 24px">ДОСТАВКА</p>
       </div>
       <div class="total-cost-container">
-        <p class="totalCost" >{{6200}}</p>
+        <p class="totalCost" >{{totalCost}}</p>
         <p style="color: #407D4D;font-size: 24px">БЕСПЛАТНО</p>
       </div>
     </div>

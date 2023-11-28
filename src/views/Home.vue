@@ -9,6 +9,11 @@ import MyFooter from "@/components/Footer.vue";
 export default {
   name: "Home-component",
   components: {Popular, MyFooter, Catalog, HeaderComponent, About, Reviews},
+  methods: {
+    scrollToCatalog() {
+      document.getElementById("catalog").scrollIntoView({behavior: "smooth"});
+    }
+  }
 }
 </script>
 
@@ -20,7 +25,7 @@ export default {
         <h1>ТВОЙ БУКЕТ<br/>ВСЁ СКАЖЕТ ЗА ТЕБЯ</h1>
         <h2>РАДУЙТЕ СВОИХ БЛИЗКИХ</h2>
         <div class="catalog-button">
-          <div class="catalog-text">в каталог</div>
+          <div class="catalog-text" @click="scrollToCatalog()">в каталог</div>
         </div>
       </div>
       <img style="width: 45vw;z-index: -1;margin-top: -185px" alt="flowers-home"

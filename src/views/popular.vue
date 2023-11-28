@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-  <div style="text-align: left">
+  <div id="popular" style="text-align: left">
     <span class="popular_title">Популярное</span>
   </div>
   <div class="popular">

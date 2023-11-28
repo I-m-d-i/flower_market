@@ -59,6 +59,7 @@ export default {
 </template>
 
 <style scoped>
+
 .header {
   position: relative;
   z-index: 2;

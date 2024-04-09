@@ -16,7 +16,7 @@ export default {
    overflow:hidden;
     width: 200px;
         height: 150px;">
-      <img class="logo" alt="logo" :src="require('@/assets/logo.png')" style="  position: absolute;
+      <img class="logo" alt="logo" :src="require('@/assets/logo.png')" style="position: absolute;
    top:50%;
    left:50%;
    transform:translate(-50%,-50%);

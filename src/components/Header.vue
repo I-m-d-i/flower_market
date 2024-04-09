@@ -1,10 +1,18 @@
 <script>
+import RegistrationComponent from "@/components/RegistrationComponent.vue";
+
 export default {
   name: "Header-component",
+  components: {RegistrationComponent},
   computed: {
     countBasket() {
       return this.$store.getters.countBasket;
     },
+  },
+  data() {
+    return {
+      registerWindow: false
+    }
   },
   methods: {
     scrollTo(id) {
@@ -16,6 +24,10 @@ export default {
 
 <template>
 <!--Логотип выравненный по левую сторону-->
+  <v-dialog v-model="registerWindow" max-width="600">
+    <registration-component v-if="registerWindow"/>
+  </v-dialog>
+
     <nav class="header">
       <div style=" position: relative;
        margin-right: 30px;
@@ -41,14 +53,15 @@ export default {
       </div>
       <div style="padding-block: 10px;display: flex;
   flex-flow: row nowrap;    gap: 10px;">
-        <img style="" alt="find" width="46" height="46" :src="require('@/assets/find.png')">
+        <img style="cursor: pointer" alt="профиль" width="46" height="46" :src="require('@/assets/profile icon.png')" @click="registerWindow = true" >
+        <img style="" alt="поиск" width="46" height="46" :src="require('@/assets/find.png')">
        <a href="/#/basket">
         <template v-if="countBasket===0">
-          <img style="" alt="basket" width="46" height="46" :src="require('@/assets/basket.png')">
+          <img style="" alt="корзина" width="46" height="46" :src="require('@/assets/basket.png')">
         </template>
         <template v-else>
           <v-badge :content="countBasket" >
-            <img style="" alt="basket" width="46" height="46" :src="require('@/assets/basket.png')">
+            <img style="" alt="корзина" width="46" height="46" :src="require('@/assets/basket.png')">
           </v-badge>
         </template>
       </a>

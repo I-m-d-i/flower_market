@@ -38,7 +38,7 @@ export default {
   gap: 5%;
   justify-items: center
 }
-@media (max-width: 680px) {
+@media (max-width: 800px) {
   .popular {
     grid-template-columns: repeat(1, 1fr);
     gap: 50px;

@@ -13,6 +13,11 @@ export default {
     scrollToCatalog() {
       document.getElementById("catalog").scrollIntoView({behavior: "smooth"});
     }
+  },
+  data() {
+    return {
+      registerWindow: false
+    }
   }
 }
 </script>
@@ -28,7 +33,7 @@ export default {
           <div  class="catalog-text" @click="scrollToCatalog()">в каталог</div>
         </div>
       </div>
-      <img style="width: 45vw;z-index: -1;margin-top: -137px" alt="flowers-home"
+      <img style="width: 40vw;z-index: -1;margin-top: -137px" alt="flowers-home"
            :src="require('@/assets/flowers-home.png')"/>
     </div>
 

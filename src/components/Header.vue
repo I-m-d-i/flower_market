@@ -1,22 +1,23 @@
 <script>
-import RegistrationComponent from "@/components/RegistrationComponent.vue";
-
 export default {
   name: "Header-component",
-  components: {RegistrationComponent},
   computed: {
     countBasket() {
       return this.$store.getters.countBasket;
     },
   },
-  data() {
-    return {
-      registerWindow: false
-    }
-  },
   methods: {
     scrollTo(id) {
         this.$router.push({name: "home", hash: `#${id}`})
+    },
+    profile(){
+      const user = this.$store.getters.getUser;
+
+      if (this.$store.getters.isValidUser && user?.name && user?.phone){
+        this.$router.push('/profile')
+      }else{
+        this.$emit("openRegistration")
+      }
     }
   }
 }
@@ -24,10 +25,6 @@ export default {
 
 <template>
 <!--Логотип выравненный по левую сторону-->
-  <v-dialog v-model="registerWindow" max-width="600">
-    <registration-component v-if="registerWindow"/>
-  </v-dialog>
-
     <nav class="header">
       <div style=" position: relative;
        margin-right: 30px;
@@ -53,7 +50,7 @@ export default {
       </div>
       <div style="padding-block: 10px;display: flex;
   flex-flow: row nowrap;    gap: 10px;">
-        <img style="cursor: pointer" alt="профиль" width="46" height="46" :src="require('@/assets/profile icon.png')" @click="registerWindow = true" >
+        <img style="cursor: pointer" alt="профиль" width="46" height="46" :src="require('@/assets/profile icon.png')" @click="profile()" >
         <img style="" alt="поиск" width="46" height="46" :src="require('@/assets/find.png')">
        <a href="/#/basket">
         <template v-if="countBasket===0">
@@ -65,7 +62,6 @@ export default {
           </v-badge>
         </template>
       </a>
-
       </div>
     </nav>
 </template>

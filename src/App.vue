@@ -22,6 +22,7 @@ export default {
 @import url('https://fonts.cdnfonts.com/css/playfair-display');
 @import url('https://fonts.cdnfonts.com/css/anonymous-pro');
 @import url('https://fonts.cdnfonts.com/css/inconsolata-2');
+@import url('https://fonts.cdnfonts.com/css/podkova');
 a {
   cursor: pointer;
 }

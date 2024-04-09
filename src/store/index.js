@@ -170,16 +170,19 @@ export default createStore({
         ],
         basket: [],
         user: {
-            name: 'Ангелина',
+            name: '',
             phone: '',
+            city:'',
+            timeLogin: 0,
         }
     },
     getters: {
         getUser: (state) => {
             return state.user
         },
-        isAuthenticated: (state) => !!state.user?.name && !!state.user?.phone,
-
+        isValidUser: (state) => {
+            return state.user.timeLogin + 60 *5 *1000 > Date.now()
+        },
         getProductById: (state) => (id) => {
             return state.products.find(product => product.id == id)
         },
@@ -202,11 +205,17 @@ export default createStore({
     mutations: {
         login(state, user) {
             state.user = user
+            state.user.timeLogin = Date.now()
+        },
+        auth(state) {
+            state.user.timeLogin = Date.now()
         },
         logout(state) {
             state.user = {
                 name: '',
                 phone: '',
+                city: '',
+                timeLogin: 0,
             }
         },
         clearBasket(state) {
@@ -223,6 +232,7 @@ export default createStore({
         },
         register(state, user) {
             state.user = user
+            state.user.timeLogin = Date.now()
         },
         editName(state, name) {
             state.user.name = name
@@ -233,10 +243,13 @@ export default createStore({
         login({commit}, user) {
             commit('login', user)
         },
+        auth({commit}) {
+            commit('auth')
+        },
         logout({commit}) {
             commit('logout')
         },
-        register({commit}, user) {
+        registration({commit}, user) {
             /*
             запрос на регистрацию
             */

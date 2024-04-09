@@ -5,10 +5,11 @@ import HeaderComponent from "@/components/Header.vue";
 import About from "@/views/About.vue";
 import Reviews from "@/views/Reviews.vue";
 import MyFooter from "@/components/Footer.vue";
+import RegistrationComponent from "@/components/RegistrationComponent.vue";
 
 export default {
   name: "Home-component",
-  components: {Popular, MyFooter, Catalog, HeaderComponent, About, Reviews},
+  components: {RegistrationComponent, Popular, MyFooter, Catalog, HeaderComponent, About, Reviews},
   methods: {
     scrollToCatalog() {
       document.getElementById("catalog").scrollIntoView({behavior: "smooth"});
@@ -18,12 +19,27 @@ export default {
     return {
       registerWindow: false
     }
+  },
+  mounted() {
+    const user = this.$store.getters.getUser;
+    if (!(user?.name && user?.phone)){
+      setTimeout(() => {
+        this.registerWindow = true
+      },1500)
+    }else{
+      if (!this.$store.getters.isValidUser){
+        this.$router.push({name: "AuthPage"})
+      }
+    }
   }
 }
 </script>
 
 <template>
-  <header-component/>
+  <header-component @openRegistration="registerWindow = true"/>
+  <v-dialog v-model="registerWindow" max-width="600">
+    <registration-component @close="registerWindow = false"/>
+  </v-dialog>
   <div class="home">
     <div style="padding-left: 60px; display: grid; grid-template-columns: 5fr 1fr ">
       <div style="margin-left: 30px;">

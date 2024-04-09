@@ -36,6 +36,11 @@ const routes = [
         path: '/profile/editName',
         name: 'Редактировать имя',
         component: () => import('@/views/EditNamePage.vue'),
+    },
+    {
+        path: '/authPage',
+        name: 'AuthPage',
+        component: () => import('@/views/AuthPage.vue'),
     }
 
 ]

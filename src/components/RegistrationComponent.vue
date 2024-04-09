@@ -4,6 +4,7 @@ export default {
   methods: {
     registration() {
       this.$store.dispatch("registration", this.formData);
+      this.$emit("close")
     }
   },
   data() {

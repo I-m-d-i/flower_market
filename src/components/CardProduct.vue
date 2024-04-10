@@ -58,6 +58,11 @@ export default {
   min-width: 310px;
   max-width: 460px;
 }
+@media (max-width: 500px) {
+  .div {
+    min-width: 150px;
+  }
+}
 
 button{
   border: none;
@@ -147,6 +152,21 @@ button{
 @media (max-width: 640px) {
   .div-8 {
     padding: 0 -5px 0 2px;
+  }
+  .div-4{
+    font-size: 17px;
+  }
+  .div-5{
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .div-7 {
+    font-size: 17px;
+  }
+  .div-8 {
+    font-size: 14px;
+    margin-top: 10px;
+    min-width: 100px;
   }
 }
 

@@ -54,7 +54,7 @@ h1 {
   font-weight: 400;
   line-height: normal;
   font-variant: all-small-caps;
-  margin-left: 306px;
+  margin-left: 30%;
   padding-top: 40px;
   padding-bottom: 50px;
 }

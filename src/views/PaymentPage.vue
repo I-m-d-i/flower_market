@@ -24,7 +24,8 @@ export default {
     <div class="pick-up-point">
       <p style="padding-bottom: 30px">Пункт выдачи</p>
       <div style=" display: inline-flex;width: 100%;   align-items: center;    justify-content: space-between;">
-        <div style="padding-left: 300px;">
+        <div/>
+        <div>
           <p>Красноярск, Красноярский рабочий 156</p>
           <div class="rating">
             <span>{{ rating }}</span>
@@ -75,7 +76,7 @@ export default {
       </div>
       <div class="total-cost-container">
         <p class="totalCost" >{{totalCost}} ₽</p>
-        <p style="color: #407D4D;font-size: 24px">БЕСПЛАТНО</p>
+        <p style="color: #407D4D;font-size: 24px; margin-top: -6px;">БЕСПЛАТНО</p>
       </div>
     </div>
   </div>
@@ -97,9 +98,8 @@ span, p, button {
   max-width: 1376px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   margin-top: 58px;
-  gap: 380px;
 }
 
 .totalCost{
@@ -108,6 +108,7 @@ span, p, button {
   font-style: normal;
   line-height: normal;
   font-variant: all-small-caps;
+  margin-top: -10px;
 }
 
 .payment-page p {
@@ -139,6 +140,7 @@ span, p, button {
 
 .payment-page {
   padding-block: 30px;
+  padding-inline: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;

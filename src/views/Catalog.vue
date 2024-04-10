@@ -295,12 +295,6 @@ li {
   font: small-caps 400 36px Source Serif Pro, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
-@media (max-width: 991px) {
-  .catalog-sort {
-
-  }
-}
-
 .catalog-sort-content {
   background-color: #e7e0e7;
   padding-block: 20px;

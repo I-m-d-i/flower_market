@@ -78,4 +78,18 @@ span {
   line-height: normal;
   font-variant: all-small-caps;
 }
+
+@media (max-width: 1050px) {
+  span {
+    font-size: 24px;
+  }
+  img {
+    width: 350px;
+  }
+}
+@media (max-width: 700px) {
+  span {
+    font-size: 16px;
+  }
+}
 </style>

@@ -54,6 +54,5 @@ h1 {
   display: grid;
   justify-items: center;
   gap: 98px;
-  margin-inline: 20%;
 }
 </style>

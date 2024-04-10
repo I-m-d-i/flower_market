@@ -37,17 +37,6 @@ export default {
 </template>
 
 <style scoped>
-
-.modal_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-}
-
 .form_reg {
   margin-top: 10px;
   display: flex;
@@ -58,14 +47,14 @@ export default {
 
 input {
   min-height: 75px;
-  width: 370px;
+  max-width: 370px;
   border-radius: 40px;
   background-color: #D5CBCB;
   color: #6B5D76;
   flex: 1;
   font: 400 24px Playfair Display, sans-serif;
   outline: none;
-  padding: 10px 0 10px 30px;
+  padding: 10px 0 10px 20px;
 
 }
 
@@ -88,8 +77,8 @@ button {
 }
 
 .modal {
-  width: 465px;
-  height: 645px;
+  max-width: 400px;
+  max-height: 645px;
   display: block;
   border-radius: 90px;
   background-color: #EDE5E5;
@@ -103,5 +92,18 @@ button {
   width: 100%;
   height: 100%;
   padding-block: 25px;
+  padding-inline: 5px;
+}
+
+@media screen and (max-width: 400px) {
+  input {
+    max-width: 240px;
+    font-size: 20px;
+    min-height: 50px;
+  }
+  button {
+    font-size: 20px;
+    margin-top: 25px;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 <script>
 import Popular from "@/views/popular.vue";
-import Catalog from "@/views/Catalog.vue";
+// import Catalog from "@/views/Catalog.vue";
 import HeaderComponent from "@/components/Header.vue";
 import About from "@/views/About.vue";
 import Reviews from "@/views/Reviews.vue";
@@ -9,7 +9,7 @@ import RegistrationComponent from "@/components/RegistrationComponent.vue";
 
 export default {
   name: "Home-component",
-  components: {RegistrationComponent, Popular, MyFooter, Catalog, HeaderComponent, About, Reviews},
+  components: {RegistrationComponent, Popular, MyFooter,  HeaderComponent, About, Reviews},
   methods: {
     scrollToCatalog() {
       document.getElementById("catalog").scrollIntoView({behavior: "smooth"});
@@ -37,23 +37,27 @@ export default {
 
 <template>
   <header-component @openRegistration="registerWindow = true"/>
-  <v-dialog v-model="registerWindow" max-width="600">
+  <v-dialog v-model="registerWindow" max-width="400">
     <registration-component @close="registerWindow = false"/>
   </v-dialog>
   <div class="home">
-    <div style="padding-left: 60px; display: grid; grid-template-columns: 5fr 1fr ">
-      <div style="margin-left: 30px;">
+    <div class="home-text">
+      <div >
         <h1>ТВОЙ БУКЕТ<br/>ВСЁ СКАЖЕТ ЗА ТЕБЯ</h1>
         <h2>РАДУЙТЕ СВОИХ БЛИЗКИХ</h2>
         <div style="cursor: pointer" class="catalog-button">
           <div  class="catalog-text" @click="scrollToCatalog()">в каталог</div>
         </div>
       </div>
-      <img style="width: 40vw;z-index: -1;margin-top: -137px" alt="flowers-home"
+      <img style="width: 60vw;
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: 600px;" alt="flowers-home"
            :src="require('@/assets/flowers-home.png')"/>
     </div>
 
-    <!--    Надписать гарантию-->
     <div class="guarantee">
       <div class="guarantee-h">
               <span>
@@ -88,18 +92,12 @@ export default {
     <popular></popular>
   </div>
   <div class="sale-form">
-    <div></div>
-    <div>
       <h2 class="sale-title">Закажите букет на<br/>
         день рождения со скидкой </h2>
-      <div class="sale-form-wrapper">
-        <v-spacer/>
         <button class="button">Подробнее</button>
-        <v-spacer/>
-      </div>
-    </div>
 
-    <svg xmlns="http://www.w3.org/2000/svg" width="135" height="115"
+
+    <svg class="percent" xmlns="http://www.w3.org/2000/svg" width="135" height="115"
          viewBox="0 0 135 115" fill="none">
       <ellipse cx="67.5628" cy="57.4209" rx="73.127" ry="48.1633" transform="rotate(-33.3285 67.5628 57.4209)"
                fill="white"/>
@@ -108,7 +106,7 @@ export default {
       </text>
     </svg>
   </div>
-  <catalog/>
+<!--  <catalog/>-->
   <about/>
   <reviews/>
   <my-footer/>
@@ -119,9 +117,13 @@ export default {
 
 .home {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
+}
+
+.home-text{
+  margin-left: 90px;
 }
 
 h1 {
@@ -131,7 +133,6 @@ h1 {
   font-style: normal;
   font-variant: small-caps;
   text-align: start;
-  outline-width: 10px;
   font-size: 55px;
   color: #4F3960;
   text-indent: 30px;
@@ -169,9 +170,7 @@ h1:first-letter {
   width: 405px;
   border-radius: 64px;
   background-color: #81637d;
-  align-self: stretch;
   display: flex;
-  flex-grow: 1;
   flex-direction: column;
   height: 42px;
 }
@@ -195,6 +194,18 @@ h1:first-letter {
   }
   .img {
     max-width: 100%;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  h1:first-letter {
+    font-size: 50px;
+  }
+  .home-text{
+    margin-left: 20px !important;
+  }
+  .catalog-button{
+    width: 300px;
   }
 }
 
@@ -304,6 +315,9 @@ input {
   border-radius: 40px;
   background: rgba(217, 217, 217, 0.75);
   font: small-caps 400 22px Playfair Display;
+  grid-column-start: 2;
+  grid-row-start: 3;
+  display: grid;
   outline: none;
   margin-bottom: 10px;
   color: #ffffff;
@@ -312,9 +326,17 @@ input {
   flex-shrink: 0;
 }
 
+.percent{
+  grid-row-start: 2;
+  justify-self: flex-start;
+  grid-column-start: 3;
+}
+
 .sale-form {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 20px 1fr;
   align-items: center;
   background-image: url(../assets/sale.png);
   background-position: center;
@@ -322,20 +344,31 @@ input {
   height: 306px;
 }
 
-.sale-form-wrapper {
-  margin-top: 70px;
-  display: flex;
-  justify-content: center;
-}
+
 
 .sale-title {
-  text-align-last: center;
+  text-align: center;
   color: #FFF3F3;
+  grid-column-start: 2;
   font-family: Playfair Display;
-  font-size: 40px;
+  font-size: 38px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+
+@media (max-width: 1100px) {
+  .percent {
+    grid-column-start: 2;
+    justify-self: center;
+  }
+  .sale-form {
+    grid-template-rows: 1fr 1fr 1fr;
+    gap:5px
+  }
+  .sale-title{
+    font-size: 30px;
+  }
 }
 
 </style>

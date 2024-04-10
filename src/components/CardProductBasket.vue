@@ -29,8 +29,8 @@ export default {
 
 <template>
   <div class="card-product">
-    <a class="img" :href="'/#/product/'+id">
-      <img :src="product.img_src" class="img" height="398" width="398" :alt="product.title"/>
+    <a class="img_container" :href="'/#/product/'+id">
+      <img :src="product.img_src" class="img" :alt="product.title"/>
     </a>
     <div class="div-3">
       <div class="div-4">{{ product.title }}</div>
@@ -38,7 +38,7 @@ export default {
         <p>Цвет: <span> белоснежный</span></p>
         <p>Склад:<span> красноярск</span></p>
       </div>
-      <div style="display: flex; flex-direction: row;justify-content: space-between; padding-inline: 20px">
+      <div class="actions_container">
         <div class="count-product">
           <button class="decrement" @click="deleteFromBasket(id)">—</button>
           <span>{{ count }}</span>
@@ -53,6 +53,15 @@ export default {
 
 
 <style scoped>
+
+
+img {
+  min-width: 210px;
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
 
 .div-3 {
   width: 100%;
@@ -79,6 +88,8 @@ export default {
 .count-product {
   display: inline-grid;
   grid-template-columns: 1fr 1fr 1fr;
+  max-width: 120px;
+  gap: 5px;
   align-items: center;
   justify-content: center;
 }
@@ -99,11 +110,8 @@ export default {
   align-items: flex-start;
   max-height: 386px;
   gap: 40px;
-  width: 100%;
-}
-
-img {
-  border-radius: 10px;
+  max-width: 1000px;
+  padding: 20px;
 }
 
 .div-4 {
@@ -141,5 +149,43 @@ img {
   flex-grow: 1;
   padding: 12px 25px 12px 25px;
   font: small-caps 18px Playfair Display, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.actions_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-inline: 20px;
+  gap: 10px
+}
+
+@media screen and (max-width: 830px) {
+  .card-product{
+    gap: 15px;
+  }
+  .div-3 {
+    padding-top: 10px;
+  }
+  .div-4{
+    font-size: 22px;
+    padding-bottom: 10px;
+  }
+  .div-5 {
+    font-size: 16px;
+    padding-bottom: 10px !important;
+  }
+
+  .div-5 span {
+    font-size: 16px;
+  }
+  img {
+    min-width: 150px;
+    max-width: 320px;
+  }
+  .add-to-cart{
+    font-size: 10px;
+    padding: 7px 25px 7px 25px;
+  }
 }
 </style>

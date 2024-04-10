@@ -17,31 +17,23 @@ export default {
     <span class="popular_title">Популярное</span>
   </div>
   <div class="popular">
-    <card-product v-for="product in products" :key="product.id" :id="product.id" :title="product.title" :price="product.price" :description="product.description" :image_src="product.img_src"/>
-
-<!--    <card-product title="букетик" price="100" description="супер букет"-->
-<!--                  :image_src="require('@/assets/flower1.png')" url="http://krasecology.ru"/>-->
-<!--    <card-product title="букетик" price="100" description="супер букет"-->
-<!--                  :image_src="require('@/assets/flower2.png')"/>-->
-<!--    <card-product title="букетик" price="100" description="супер букет"-->
-<!--                  :image_src="require('@/assets/flower3.png')"/>-->
+    <card-product class="card-product" v-for="product in products" :key="product.id" :id="product.id" :title="product.title" :price="product.price" :description="product.description" :image_src="product.img_src"/>
   </div>
 </template>
 
 <style scoped>
 .popular {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 80px;
-  grid-template-columns: repeat(3, 1fr);
   justify-content: space-around;
   margin-inline: 20px;
   gap: 5%;
   justify-items: center
 }
-@media (max-width: 800px) {
-  .popular {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 50px;
+@media (max-width: 1100px) {
+  .card-product{
+    margin-bottom: 20px;
   }
 }
 

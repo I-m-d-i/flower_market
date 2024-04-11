@@ -33,6 +33,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   margin-top: 17px;
+  gap: 10px;
 }
 .div-4 {
   color: #000;
@@ -49,6 +50,7 @@ export default {
 .img {
   width: 100%;
   aspect-ratio: 0.9;
+  min-width: 200px;
   border-radius: 24px;
 }
 .add-to-basket {
@@ -60,5 +62,11 @@ export default {
   flex-grow: 1;
   padding: 12px 25px 12px 25px;
   font: small-caps 400 20px Playfair Display, -apple-system, Roboto, Helvetica, sans-serif;
+}
+@media (max-width: 500px) {
+  .add-to-basket{
+    font-size: 16px;
+    padding: 7px 25px 7px 25px;
+  }
 }
 </style>

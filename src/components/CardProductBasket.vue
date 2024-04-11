@@ -60,7 +60,7 @@ img {
   max-width: 400px;
   width: 100%;
   height: auto;
-  border-radius: 5px;
+  border-radius: 25px;
 }
 
 .div-3 {
@@ -71,7 +71,6 @@ img {
 .count-product button {
   color: white;
   border-radius: 3px;
-  min-width: 39px;
   width: 40px;
   height: 21px;
   user-select: none;
@@ -105,11 +104,12 @@ img {
 }
 
 .card-product {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
   flex-direction: row;
   align-items: flex-start;
-  max-height: 386px;
-  gap: 40px;
+  gap: 20px;
   max-width: 1000px;
   padding: 20px;
 }
@@ -146,6 +146,7 @@ img {
   border-radius: 40px;
   background-color: #81637d;
   max-width: 140px;
+  min-width: 90px;
   flex-grow: 1;
   padding: 12px 25px 12px 25px;
   font: small-caps 18px Playfair Display, -apple-system, Roboto, Helvetica, sans-serif;
@@ -160,7 +161,7 @@ img {
   gap: 10px
 }
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 760px) {
   .card-product{
     gap: 15px;
   }
@@ -181,11 +182,31 @@ img {
   }
   img {
     min-width: 150px;
-    max-width: 320px;
+    max-width: 300px;
   }
   .add-to-cart{
     font-size: 10px;
     padding: 7px 25px 7px 25px;
+  }
+  .count-product button{
+    width: 35px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .decrement {
+    height: 20px !important;
+  }
+  .increment {
+    height: 20px !important;
+  }
+  .actions_container {
+    gap: 5px;
+    padding-inline: 10px;
+  }
+  .div-5, .div-5 span {
+    padding-bottom: 5px !important;
+    font-size: 16px;
   }
 }
 </style>

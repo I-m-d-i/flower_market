@@ -53,6 +53,12 @@ h1 {
 .basket {
   display: grid;
   justify-items: center;
-  gap: 98px;
+  gap: 50px;
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 38px;
+  }
 }
 </style>

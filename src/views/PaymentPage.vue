@@ -188,7 +188,8 @@ span, p, button {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-inline: 41px;
+  padding-inline: 25px;
+  gap:15px;
   max-width: 901px;
   height: 131px;
   border-radius: 51px;
@@ -201,6 +202,12 @@ span, p, button {
   border-radius: 14px;
   background: #EAD4D4;
   height: 59px;
+}
+
+@media screen and (max-width: 500px) {
+  .payment-time button {
+    font-size: 14px;
+  }
 }
 
 .payment-method-icon {

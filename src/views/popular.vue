@@ -49,7 +49,7 @@ export default {
 
 @media (max-width: 680px) {
   .popular_title{
-    margin-left: 0
+    margin-left: 20px
   }
 }
 </style>

@@ -143,9 +143,12 @@ export default {
   }
 
   .header {
-    backdrop-filter: blur(3px) saturate(130%) contrast(120%);
-    background-color: rgba(187, 143, 178, 0.29);
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0 0 0 3000px rgba(150, 150, 150, 0.192);
+    background-color: rgba(187, 143, 178, 0.32);
     padding-inline: 15px !important;
+    border: 1px solid rgba(112, 112, 112, 0.56);
+    overflow: hidden;
   }
 
   .active {

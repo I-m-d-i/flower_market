@@ -27,59 +27,60 @@ export default {
 
 <template>
   <div>
-    <div class="header">
-      <div class="icon-back" style="cursor: pointer" @click="this.$router.go(-1)">
-        <svg xmlns="http://www.w3.org/2000/svg" width="73" height="24" viewBox="0 0 73 24" fill="none">
+    <div>
+      <div class="icon-back" @click="this.$router.go(-1)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="24" viewBox="0 0 73 24" fill="none">
           <path
-              d="M0.939339 10.9393C0.353554 11.5251 0.353554 12.4749 0.939339 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92893 13.1924 1.97919 12.6066 1.3934C12.0208 0.807611 11.0711 0.807611 10.4853 1.3934L0.939339 10.9393ZM73 10.5L2 10.5V13.5L73 13.5V10.5Z"
-              fill="#81637D"/>
+            d="M0.939339 10.9393C0.353554 11.5251 0.353554 12.4749 0.939339 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92893 13.1924 1.97919 12.6066 1.3934C12.0208 0.807611 11.0711 0.807611 10.4853 1.3934L0.939339 10.9393ZM73 10.5L2 10.5V13.5L73 13.5V10.5Z"
+            fill="#81637D"/>
         </svg>
       </div>
-      <div class="header-title">
-        <h1>КАРТОЧКА БУКЕТА</h1>
-      </div>
-
-    </div>
-    <div style="padding-inline: 21%">
-
       <div class="card-container">
-        <img :src="product.img_src" alt="">
         <div>
-          <h2> {{ product.title }}</h2>
-          <p>{{ product.description }}</p>
-          <div class="product-parameters">
-            <p>Диаметр: {{ product.diameter }}</p>
-            <p>Высота: {{ product.height }}</p>
-          </div>
-          <p class="price">{{ product.price }}<span> руб</span></p>
-          <div>
-            <input type="checkbox" id="cb1"><label for="cb1">Добавить открытку</label>
-          </div>
-          <div class="text">
-            <textarea id="text" placeholder="напишите текст"/>
-          </div>
-          <div style="text-align: end">
-            <button class="div-8" @click="addToBasket(product.id)">Купить</button>
+          <h1 class="header header-left">КАРТОЧКА БУКЕТА</h1>
+          <img :src="product.img_src" alt="">
+        </div>
+        <div>
+          <div class="header header-right"/>
+          <div class="card-info">
+            <h2> {{ product.title }}</h2>
+            <p>{{ product.description }}</p>
+            <div class="product-parameters">
+              <p>Диаметр: {{ product.diameter }}</p>
+              <p>Высота: {{ product.height }}</p>
+            </div>
+            <p class="price">{{ product.price }}<span> руб</span></p>
+            <div>
+              <input type="checkbox" id="cb1"><label for="cb1">Добавить открытку</label>
+            </div>
+            <div class="text">
+              <textarea id="text" placeholder="напишите текст"/>
+            </div>
+            <div style="text-align: end">
+              <button class="div-8" @click="addToBasket(product.id)">Купить</button>
+            </div>
           </div>
         </div>
-
-
       </div>
     </div>
     <div class="other-products">
-      <h2>вам так же может понравися:</h2>
+      <h2>вам так же может понравится:</h2>
       <div class="other-products-container">
         <card-product2 id="2"></card-product2>
-        <card-product2 id="2"></card-product2>
-        <card-product2 id="2"></card-product2>
+        <card-product2 id="3"></card-product2>
+        <card-product2 id="4"></card-product2>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+
+.card-info{
+  padding-inline: 15px;
+}
 .other-products-container{
-  margin-inline: 120px;
+  margin-inline: 100px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   flex-direction: row;
@@ -87,12 +88,7 @@ export default {
   justify-items: center;
   gap: 10%;
 }
-@media (max-width: 800px) {
-  .other-products-container{
-    grid-template-columns: repeat(1, 1fr);
-    gap: 5%;
-  }
-}
+
 .other-products h2{
   color: #000;
   font-family: Source Serif Pro;
@@ -106,7 +102,9 @@ export default {
 .icon-back {
   position: absolute;
   top: 89px;
-  left: 74px;
+  left: 2%;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .text {
@@ -187,10 +185,13 @@ h2 {
 }
 
 .card-container {
-  margin-top: 20px;
+  padding-inline: 20px;
+  padding-bottom: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 150px;
+  justify-items: stretch;
+  max-width: 80%;
+  margin-inline: auto;
 }
 
 .product-parameters {
@@ -202,7 +203,7 @@ img {
   aspect-ratio: 0.84;
   object-position: center;
   position: relative;
-  width: 300px;
+  height: 40%;
   overflow: hidden;
   align-self: start;
   background: lightgray 50% / cover no-repeat;
@@ -233,26 +234,64 @@ label {
   display: flex;
   flex-direction: row;
   margin-top: 50px;
-}
-
-.header-title {
-  margin-inline: 21%;
-  width: 100%;
+  margin-bottom: 30px;
+  height: 92px;
   background-color: #e7e0e7;
 }
 
-
-.header-title h1 {
+.header-left   {
   padding-block: 25px;
   padding-left: 35px;
   color: #000;
-
   font-family: Source Serif Pro;
   font-size: 36px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   font-variant: small-caps;
+}
+@media (max-width: 1000px) {
+  .header-left{
+    font-size: 28px;
+  }
+}
+@media (max-width: 800px) {
+  .other-products-container{
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    margin-inline:50px;
+  }
+  .icon-back {
+    width: 60px;
+  }
+}
+
+@media (max-width: 650px) {
+  .header-title h1 {
+    font-size: 24px;
+  }
+  .card-container{
+    grid-template-columns: 1fr;
+  }
+
+  .header-right {
+    display: none;
+  }
+  .icon-back {
+    width: 50px;
+     }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-parameters{
+    margin-block: 15px;
+  }
+  .other-products h2{
+    margin-left: 25px;
+  }
 }
 
 

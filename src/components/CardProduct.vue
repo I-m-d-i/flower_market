@@ -1,6 +1,6 @@
 <template>
   <div class="div">
-    <a  class="img"  :href="'/#/product/'+id">
+    <a class="img_container" :href="'/#/product/'+id">
       <img :src="image_src" class="img" :alt="title"/>
     </a>
     <div class="div-2">
@@ -9,7 +9,7 @@
         <div class="div-5">{{ description }}</div>
       </div>
       <div class="div-6">
-        <div class="div-7">
+        <div class="div-7" >
           <span style="font-family: Crimson Text, -apple-system, Roboto, Helvetica, sans-serif;">{{ price }} руб</span>
         </div>
         <button class="div-8" @click="addToBasket(id)">в корзину</button>
@@ -55,28 +55,22 @@ export default {
   display: flex;
   flex-direction: column;
   padding: 5px;
-  min-width: 310px;
   max-width: 460px;
-}
-@media (max-width: 500px) {
-  .div {
-    min-width: 150px;
-  }
 }
 
 button{
   border: none;
 }
 
-.img {
-  border-radius: 368px 368px 0px 0px;
-  aspect-ratio: 0.84;
-  object-position: center;
+.img_container {
   position: relative;
   width: 100%;
-  overflow: hidden;
-  align-self: start;
-  background:lightgray 50% / cover no-repeat;
+}
+
+.img {
+  border-radius: 368px 368px 0px 0px;
+  width: 100%;
+  aspect-ratio: 0.84;
 }
 
 .div-2 {
@@ -149,7 +143,8 @@ button{
   font: small-caps 400 18px Playfair Display, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
-@media (max-width: 640px) {
+
+@media (max-width: 1100px) {
   .div-8 {
     padding: 0 -5px 0 2px;
   }
@@ -164,9 +159,24 @@ button{
     font-size: 17px;
   }
   .div-8 {
-    font-size: 14px;
+    font-size: 10px;;
     margin-top: 10px;
-    min-width: 100px;
+    min-width: 75px;
+  }
+  .div-6 {
+    padding-right: 0px;
+  }
+  .div-2 {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 440px) {
+  .div-4 {
+    font-size: 14px;
+  }
+  .div-5 {
+    font-size: 10px;
   }
 }
 

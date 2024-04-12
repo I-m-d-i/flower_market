@@ -64,7 +64,7 @@ export default {
 
 <style scoped>
 
-.mobile_menu {
+.mobile_menu_icon {
   display: none;
 }
 

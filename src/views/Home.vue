@@ -1,15 +1,16 @@
 <script>
 import Popular from "@/views/popular.vue";
-// import Catalog from "@/views/Catalog.vue";
+import Catalog from "@/views/Catalog.vue";
 import HeaderComponent from "@/components/Header.vue";
 import About from "@/views/About.vue";
 import Reviews from "@/views/Reviews.vue";
 import MyFooter from "@/components/Footer.vue";
 import RegistrationComponent from "@/components/RegistrationComponent.vue";
+import AboutMobile from "@/views/AboutMobile.vue";
 
 export default {
   name: "Home-component",
-  components: {RegistrationComponent, Popular, MyFooter,  HeaderComponent, About, Reviews},
+  components: {AboutMobile, RegistrationComponent, Popular,Catalog, About,  MyFooter,  HeaderComponent, Reviews},
   methods: {
     scrollToCatalog() {
       document.getElementById("catalog").scrollIntoView({behavior: "smooth"});
@@ -18,6 +19,11 @@ export default {
   data() {
     return {
       registerWindow: false
+    }
+  },
+  computed: {
+    width() {
+      return window.innerWidth
     }
   },
   mounted() {
@@ -106,8 +112,9 @@ export default {
       </text>
     </svg>
   </div>
-<!--  <catalog/>-->
-  <about/>
+ <catalog/>
+  <about v-if="width > 950"/>
+  <about-mobile v-else/>
   <reviews/>
   <my-footer/>
 </template>

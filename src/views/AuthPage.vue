@@ -26,8 +26,8 @@ export default {
 <style scoped>
 .arrow {
   position: absolute;
-  top: 75px;
-  left: 49px;
+  top: 70px;
+  left: 45px;
   cursor: pointer;
 }
 span {
@@ -40,7 +40,6 @@ span {
 }
 .container {
   background-color: #EEE1E1;
-  height: 100vh;
   display: grid;
   gap: 20px;
   align-items: center;
@@ -106,6 +105,10 @@ span {
   span {
     font-size: 20px;
     max-width: 400px;
+  }
+  .arrow{
+    top: 35px;
+    transform: scale(0.7);
   }
 }
 @media screen and (max-width: 400px) {
